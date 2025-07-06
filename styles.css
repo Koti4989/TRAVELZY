@@ -1,0 +1,1117 @@
+/* Global Styles */
+:root {
+    --primary-yellow: #FFD700;
+    --secondary-yellow: #FFC107;
+    --white: #FFFFFF;
+    --dark-yellow: #FFA000;
+    --text-dark: #333333;
+    --text-light: #666666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    color: var(--dark-yellow);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--dark-yellow);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6)),
+                url('./images/chittorgarh.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+    margin-top: 0; /* Remove margin-top here as we are positioning from top */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.15),
+        rgba(255, 255, 255, 0.7)
+    );
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: var(--dark-yellow);
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button {
+    background-color: var(--primary-yellow);
+    color: var(--text-dark);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--dark-yellow);
+}
+
+/* General Section Styles for toggling visibility */
+main section {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+}
+
+main section:first-child { /* Ensure the first section (hero) is visible initially */
+    visibility: visible;
+    position: relative;
+}
+
+/* Destinations Section */
+.destinations-section {
+    padding: 5rem 1rem;
+    background-color: var(--white);
+    padding-top: 60px; /* Add padding to top of other sections */
+}
+
+.destinations-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark-yellow);
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.destination-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination-card h3 {
+    padding: 1rem;
+    color: var(--dark-yellow);
+}
+
+.destination-card p {
+    padding: 0 1rem 1rem;
+    color: var(--text-light);
+}
+
+.price-tag {
+    background-color: var(--primary-yellow);
+    color: var(--text-dark);
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.explore-btn {
+    background-color: var(--dark-yellow);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: block;
+    width: calc(100% - 2rem);
+}
+
+.explore-btn:hover {
+    background-color: var(--primary-yellow);
+    color: var(--text-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Features Section */
+.features-section {
+    padding: 5rem 1rem;
+    background-color: var(--primary-yellow);
+    padding-top: 60px; /* Add padding to top of other sections */
+}
+
+.features-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--dark-yellow);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 5rem 1rem;
+    background-color: var(--white);
+    padding-top: 60px; /* Add padding to top of other sections */
+}
+
+.testimonials-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark-yellow);
+}
+
+.testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonial {
+    background-color: var(--primary-yellow);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 0 1rem;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-yellow);
+    color: var(--white);
+    padding: 3rem 1rem 1rem;
+    padding-top: 60px; /* Add padding to top of other sections */
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-yellow);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .destination-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Itinerary Section */
+.itinerary-section {
+    padding: 5rem 1rem;
+    background-color: var(--white);
+    padding-top: 60px; /* Add padding to top of other sections */
+}
+
+.itinerary-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark-yellow);
+}
+
+.itinerary-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.trip-planner-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-step {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-step h3 {
+    color: var(--dark-yellow);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="number"]:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-yellow);
+    outline: none;
+}
+
+.preference-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.preference-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.preference-option:hover {
+    background-color: var(--primary-yellow);
+}
+
+.preference-option input[type="checkbox"],
+.preference-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.nav-btn,
+.submit-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn {
+    background-color: var(--dark-yellow);
+    color: var(--white);
+}
+
+.nav-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.submit-btn {
+    background-color: var(--primary-yellow);
+    color: var(--text-dark);
+}
+
+.nav-btn:hover:not(:disabled),
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Itinerary Section */
+@media (max-width: 768px) {
+    .itinerary-form-container {
+        padding: 1.5rem;
+    }
+
+    .preference-options {
+        grid-template-columns: 1fr;
+    }
+
+    .form-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-btn,
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+/* Itinerary Display */
+.itinerary-display {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.itinerary-display h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.itinerary-display .destination-header p {
+    text-align: center;
+    color: #6c757d;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.itinerary-display h3 {
+    color: var(--dark-yellow);
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+.destination-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.attractions, .accommodations, .food {
+    background: #fdfdfd;
+    padding: 1.8rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.attractions ul, .accommodations ul, .food ul {
+    list-style: none;
+    padding: 0;
+}
+
+.accommodations li {
+    margin-bottom: 10px;
+    padding: 8px 0;
+    color: #495057;
+}
+
+.accommodations li strong {
+    color: #34495e;
+    margin-right: 8px;
+}
+
+.detailed-itinerary {
+    background: #fdfdfd;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.day-itinerary {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.day-itinerary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.day-itinerary h4 {
+    color: var(--dark-yellow);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+.activities {
+    margin-top: 1rem;
+}
+
+.activity {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding-left: 10px;
+    border-left: 3px solid var(--primary-yellow);
+}
+
+.activity .time {
+    font-weight: 600;
+    color: #495057;
+    min-width: 80px;
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.activity .type {
+    background: var(--secondary-yellow);
+    color: var(--text-dark);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.activity .place strong {
+    display: block;
+    color: var(--dark-yellow);
+    font-size: 1.1em;
+    margin-bottom: 3px;
+}
+
+.activity .place p {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.attractions li, .food li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.attractions li strong, .food li strong {
+    display: block;
+    font-size: 1.1em;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.attractions li p, .food li p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.entry-fee, .hours, .type, .price-range {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.entry-fee:before {
+    content: "💰 ";
+}
+
+.hours:before {
+    content: "🕒 ";
+}
+
+.type:before {
+    content: "🍽️ ";
+}
+
+.price-range:before {
+    content: "💲 ";
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .itinerary-display {
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+    }
+
+    .itinerary-display h2 {
+        font-size: 2rem;
+    }
+
+    .itinerary-display h3 {
+        font-size: 1.5rem;
+    }
+
+    .destination-details {
+        grid-template-columns: 1fr;
+    }
+
+    .attractions, .accommodations, .food {
+        padding: 1.2rem;
+    }
+
+    .day-itinerary {
+        padding: 1.2rem;
+    }
+
+    .activity .time {
+        min-width: 60px;
+    }
+}
+
+/* Error states */
+.error {
+    border-color: #e74c3c !important;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Loading states */
+.loading {
+    position: relative;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Date Input Styling */
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+    padding: 0.8rem;
+}
+
+.form-group input[type="date"]:focus {
+    border-color: var(--primary-yellow);
+    outline: none;
+}
+
+.form-group input[type="date"]:hover {
+    border-color: var(--primary-yellow);
+}
+
+/* Add calendar icon */
+.form-group input[type="date"] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 1.2rem;
+    padding-right: 2.5rem;
+}
+
+/* Date input container */
+.form-group {
+    position: relative;
+}
+
+/* Date input label */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* Date input focus state */
+.form-group input[type="date"]:focus {
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+}
+
+/* Loading and Error States */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-light);
+}
+
+.error-message {
+    text-align: center;
+    padding: 2rem;
+    color: #e74c3c;
+}
+
+.retry-btn {
+    background-color: var(--primary-yellow);
+    color: var(--text-dark);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.retry-btn:hover {
+    background-color: var(--dark-yellow);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Destination Options Styling */
+.destination-option {
+    margin-bottom: 1rem;
+}
+
+.destination-option-label {
+    display: block;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.destination-option-label:hover {
+    border-color: var(--primary-yellow);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.destination-option-content {
+    margin-left: 1rem;
+}
+
+.destination-option-content h4 {
+    color: var(--dark-yellow);
+    margin-bottom: 0.5rem;
+}
+
+.destination-option-content p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.destination-details {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.attractions li, .food li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.attractions li strong, .food li strong {
+    display: block;
+    font-size: 1.1em;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.attractions li p, .food li p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.entry-fee, .hours, .type, .price-range {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.entry-fee:before {
+    content: "💰 ";
+}
+
+.hours:before {
+    content: "🕒 ";
+}
+
+.type:before {
+    content: "🍽️ ";
+}
+
+.price-range:before {
+    content: "💲 ";
+}
+
+/* Reviews Section */
+.reviews-section {
+    padding: 5rem 1rem;
+    background-color: var(--white);
+    padding-top: 60px;
+}
+
+.reviews-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark-yellow);
+}
+
+.reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 1rem;
+    justify-content: center; /* Center items when they wrap */
+}
+
+#dynamic-reviews-container {
+    flex: 2; /* Allows it to grow and shrink */
+    flex-basis: 65%; /* Takes about 2/3 of the space */
+    display: grid; /* Keep grid for internal review cards */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.review-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.review-header h3 {
+    color: var(--dark-yellow);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.rating {
+    color: var(--primary-yellow);
+    font-size: 1.2rem;
+}
+
+.review-text {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.reviewer {
+    color: var(--text-light);
+    font-style: italic;
+    text-align: right;
+    margin: 0;
+}
+
+.review-form-container {
+    flex: 1; /* Allows it to grow and shrink */
+    flex-basis: 30%; /* Takes about 1/3 of the space */
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.review-form-container h3 {
+    color: var(--dark-yellow);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.review-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.review-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.review-form input[type="text"],
+.review-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.review-form input[type="text"]:focus,
+.review-form textarea:focus {
+    border-color: var(--primary-yellow);
+    outline: none;
+}
+
+.rating-input {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.star {
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.star:hover,
+.star.active {
+    color: var(--primary-yellow);
+}
+
+.submit-review-btn {
+    background-color: var(--primary-yellow);
+    color: var(--text-dark);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-review-btn:hover {
+    background-color: var(--dark-yellow);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .reviews-container {
+        flex-direction: column;
+        align-items: center; /* Center stacked items */
+    }
+    
+    #dynamic-reviews-container,
+    .review-form-container {
+        flex-basis: 100%;
+        min-width: unset;
+    }
+
+    #dynamic-reviews-container {
+        grid-template-columns: 1fr;
+    }
+} 
